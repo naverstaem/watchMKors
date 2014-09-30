@@ -1,0 +1,472 @@
+// # SHORT HOWTO
+// ## Sprites
+//     .whatever
+//          +sized-sprite($icons, coderiver) //or
+// 			+s(codedby) //gets default value for spritemap as $icons
+// ### animation example
+//     +include keyframes(rotate)
+//        from
+//           +rotate(0)
+//        to
+//           +rotate(360)
+// ## animation usage
+//     body:hover
+// 	    +animation(rotate 200s linear infinite)
+// ## animations easing, see easings.net for full list and examples, tnx @ai
+//     transition: all 1.2s ceaser($ease-in)
+// ## gradient example
+//     +background-image(linear-gradient(#232323, #5c5c5c));
+//     +g(#232323, #5c5c5c);
+//	   horizontal
+//     +gh(#232323, #5c5c5c);
+// ## making bw-images
+//     img
+//			@extend %gray
+// ## predefined media-queries: https://github.com/paranoida/sass-mediaqueries
+//     +min-screen(320)
+//			display: none
+// +max-screen(1000), +iphone5, +iphone4, +ipad-retina, +ipad, +hdpi - also available
+//
+// ## use cycles
+//     @for $i from 1 through 3
+//       .item-#{$i}
+//			width: 2em * $i;
+//     @each $s in a,b,c
+// 	    	#{$s}
+//				display: none
+// ## fonts 
+// Save fonts to /css/fonts, after that write (eot, woff, ttf):
+// +font(book, cytiapro-black-webfont)  
+// =book
+// 	font-family: "book", Arial, sans-serif 
+// insert pics into css
+// div
+// 	+pic("blabla.png")
+// span
+// 	+png(blabla)
+// p
+// 	+jpg(bla)
+
+
+//body
+//  font-family: Arial, sans-serif
+//  font-size: 12px
+//  line-height: 1.4
+=pfl
+  font-family: "Conv_PFDinTextCondPro-Light"
+  font-weight: normal
+  font-style: normal
+
+input.error, textarea.error
+  box-shadow: inset 0 0 10px red !important
+label.error
+  display: none !important
+
+
+.icon
+  display: inline-block
+  position: relative
+
+body
+  font-size: 16px
+  line-height: 1.4
+  background-color: #fff
+  color: #1e1e1e
+  +pfl
+.out
+  position: relative
+input, textarea
+  +placeholder
+    font-size: 16px
+    color: #787878
+    +pfl
+%in
+  max-width: 1200px
+  width: 1000px
+  margin-left: auto
+  margin-right: auto
+
+.myFancyClose
+  position: absolute
+  top: -17px
+  right: -18px
+
+.btn
+  display: inline-block
+  +border-radius(16px)
+  +background-clip(border-box)
+  padding: 8px 25px
+  color: white
+  font-size: 18px
+  border: solid 2px #ffffff
+  text-decoration: underline
+  +transition(background, .5s)
+  &:hover
+    color: #13133b
+    background-color: lighten(#ffffff, 10%)
+.title
+  text-align: center
+  font-size: 48px
+  font-family: 'gotham_probold'
+  line-height: .8em
+  color: #1e1e1e
+  text-transform: uppercase
+  font-weight: normal
+  position: relative
+  z-index: 2
+  span
+    font-size: 36px
+
+
+
+
+
+
+.counter
+  width: 285px
+  text-align: center
+  display: inline-block
+
+  p
+    color: #ffffff
+    margin-bottom: 5px
+    margin-top: 3px
+    font-size: 14px
+    position: static
+    font-family: 'conv_pfdintextcondpro-light'
+    &.counter__title
+      font-family: 'conv_segoeprintregular'
+      margin-bottom: 10px
+  ul
+    list-style: none
+    margin: 0
+    padding: 0
+    display: inline-block
+
+    li
+      float: left
+      margin: 0 10px
+      text-align: center
+      position: relative
+
+      span
+        position: relative
+        +text-shadow(1px 1px 1px rgb(0, 0, 0))
+        display: block
+        font-size: 36px
+        background: url(../img/counter_bg.png) no-repeat
+        width: 50px
+        height: 60px
+        +box
+        padding-top: 5px
+        padding-right: 2px
+        font-family: 'conv_pfdintextcondpro-thin'
+        color: white
+
+
+
+.form__out
+
+.form
+  width: 380px
+  height: 555px
+  position: relative
+  +box
+  .caption
+    box-sizing: border-box
+    height: 240px
+    padding-top: 30px
+    background: rgba(#000000, .7)
+    text-align: center
+    h3
+      margin-top: 0
+      margin-bottom: 0
+      font-size: 36px
+      font-weight: normal
+      text-align: center
+      font-family: 'Conv_PFDinTextCondPro-Thin'
+      color: #ffffff
+      text-transform: uppercase
+      line-height: 1em
+    h4
+      margin-top: 0
+      margin-bottom: 15px
+      font-size: 18px
+      text-align: center
+      font-weight: normal
+      text-transform: uppercase
+      font-family: 'conv_pfdintextcondpro-regular'
+      color: #ffffff
+      line-height: 1em
+
+
+.frm
+  height: 305px
+  padding-top: 30px
+  background: #ffffff
+
+  //box-sizing: border-box
+  +box
+
+  h4
+    text-align: center
+    color: #ffffff
+    margin: 5px 0 0
+    font-weight: normal
+    font-family: 'Conv_pfdintextcondpro-light'
+    font-size: 18px
+  h5
+    @extend h4
+    margin: 0
+    font-size: 24px
+    span
+      font-family: 'conv_pfdintextcondpro-regular'
+form
+  margin-top: -10px
+  position: relative
+  text-align: center
+  input
+    padding-left: 20px
+    width: 280px
+    height: 50px
+    display: block
+    margin: auto auto 20px
+    +box
+    font-size: 18px
+    +background-clip(padding-box)
+    +border-radius(2px)
+    border: solid 2px rgb(220,220,220)
+  .form__bottom
+    text-align: center
+
+    h6
+      font-family: 'georgiaitalic'
+      font-size: 18px
+      color: #5a5a5a
+      font-weight: normal
+      margin-top: 10px
+      span
+        font-size: 16px
+        font-family: 'conv_pfdintextcondpro-light'
+        color: #787878
+        font-weight: normal
+  .radio-toolbar
+    position: absolute
+    top: 37px
+    left: -245px
+    width: 87px
+    height: 73px
+
+    p
+      text-align: center
+      font-family: 'conv_segoeprintregular'
+      font-size: 14px
+      color: #ffffff
+      line-height: 2.7em
+      margin-left: 6px
+    label
+      margin-left: 6px
+    input[type='radio']
+      display: none
+    .input--first
+
+      position: relative
+      display: inline-block
+      width: 20px
+      height: 20px
+      +border-radius(50%)
+      +background-clip(padding-box)
+      +background-image(linear-gradient(to bottom left, #d1b977 0%, #f9e5bd 30%, #d1b977 60.01%, #776331 90.31%, #d1b977 100%))
+
+      &:hover
+        cursor: pointer
+    .input--second
+      +background-image(linear-gradient(to bottom left, #c7c7c7 0%, #fff 30%, #dbdbdb 60.01%, #818181 90.31%, #c7c7c7 100%))
+
+
+    input[type='radio']:checked + label
+      > span
+        //border: 2px solid rgba(#fff,.5)
+        width: 30px
+        height: 30px
+        +transition(all .2s)
+
+
+
+
+.button
+  +box
+  +border-radius(4px)
+  width: 280px
+  height: 70px
+  color: #d2b978
+  +single-text-shadow
+  display: block
+  margin: 20px auto auto
+  font-family: 'pf_highway_sans_probold'
+  font-size: 36px
+  background: url(../img/button-form_bg.png) no-repeat
+  letter-spacing: 1px
+  text-decoration: none
+
+  &:hover
+    +box-shadow(inset 0 0 5px 2px #d2b978)
+// common blocks
+
+.button--video
+  background: url(../img/button-video_bg.png) no-repeat
+  width: 130px
+  height: 50px
+  +pfl
+  font-size: 18px
+  color: #554628
+  text-transform: uppercase
+  text-align: center
+  padding-top: 14px
+  text-decoration: underline
+  float: left
+  +box
+  margin-top: 0
+.button--specs
+  background: url(../img/specs-button_bg.png) no-repeat
+  width: 240px
+  height: 70px
+  color: #dcbe8c
+  font-size: 36px
+  font-family: 'pf_highway_sans_probold'
+  +box
+  display: block
+  text-align: center
+  padding-top: 10px
+
+.button--red
+  margin-top: 0
+  font-size: 30px
+  display: inline-block
+  padding: 17px 60px
+  letter-spacing: 1px
+  border: none
+  font-family: 'conv_pfdintextcondpro-thin'
+  color: #ffffff
+  +single-text-shadow()
+  +border-radius(4px)
+  +background-clip(padding-box)
+  +box-shadow(inset 0 -4px 0 rgba(60, 23, 54, 0.45))
+  +background-image(linear-gradient(to bottom, #d13181 0%, #951d59 100%))
+  &:hover
+    +background-image(linear-gradient(to bottom, #951d59 0%, #d13181 100%))
+    +box-shadow(0 0 0 0)
+.button--order
+  margin-top: 0
+  font-size: 30px
+  width: 220px
+  height: 70px
+  background: url(../img/order-button_bg.png) no-repeat
+  display: inline-block
+  font-family: 'pf_highway_sans_probold'
+  color: #000
+  +single-text-shadow()
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
