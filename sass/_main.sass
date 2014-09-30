@@ -307,26 +307,19 @@ header
           +transform(translate(-50%, -50%))
 
 .specs
-  background: #000
   +clr
   +box
-  padding-top: 55px
+  padding-top: 20px
   h2
-    font-size: 36px
-    margin-bottom: 60px
-    color: #dcbe8c
+    margin-bottom: 80px
   .specs_in
     @extend %in
     +clr
   &__items
     float: left
-    width: 360px
-    font-size: 18px
-    margin-right: 5px
-    &:last-child
-      margin-right: 0
-    &.short
-      width: 240px
+    width: 205px
+    margin-right: 110px
+
   &__colors
     text-align: left
     display: block
@@ -342,49 +335,60 @@ header
 
 
   &__item
-    color: #dcbe8c
-    margin-top: 10px
-    hr
-      background-color: #d1d1d1
-      +background-image(linear-gradient(to left, #000 0%, #3b3b3b 100%))
-      height: 2px
-      border: none
-      margin: 0
-    span
-      color: #ffffff
-    
+    margin-bottom: 35px
+    h3
+      font-family: 'conv_pfdintextcondpro-light'
+      font-size: 16px
+      font-weight: normal
+      color: #5a5a5a
+    p
+      font-family: 'conv_pfdintextcondpro-regular'
+      font-size: 18px
+      color: #1e1e1e
+    .color--first
+      margin-top: 10px
+      position: relative
+      display: inline-block
+      width: 30px
+      height: 30px
+      +border-radius(50%)
+      +background-clip(padding-box)
+      +background-image(linear-gradient(to bottom left, #d1b977 0%, #f9e5bd 30%, #d1b977 60.01%, #776331 90.31%, #d1b977 100%))
+    .color--second
+      +background-image(linear-gradient(to bottom left, #c7c7c7 0%, #fff 30%, #dbdbdb 60.01%, #818181 90.31%, #c7c7c7 100%))
+
   &__watch
     position: relative
     float: right
     margin-right: -10px
-    margin-top: 30px
+    margin-top: 70px
     img
-      width: 340px
-      height: 420px
+      width: 240px
+      height: 415px
     .specs__text-degree
       position: absolute
       top: -25px
-      left: -30px
+      left: -45px
       width: 160px
       height: 110px
       z-index: 100
       .text-degree
         position: relative
-        font-family: 'conv_pfdintextcondpro-light'
+        font-family: 'georgiaitalic'
         font-size: 24px
         line-height: 1em
         padding-left: 35px
         display: inline-block
-        text-transform: uppercase
-        color: #ffffff
+        color: #000
         text-align: center
         span
-          font-family: 'conv_pfdintextcondpro-bold'
+          font-family: 'georgiabold_italic'
+          font-size: 30px
         &:before
           position: absolute
           content: ""
           top: 2px
-          left: -25px
+          left: -33px
           +s(360)
       p
         margin-top: 5px
@@ -395,15 +399,15 @@ header
         line-height: 1em
     .prev
       position: absolute
-      left: -35px
-      top: 200px
+      left: -48px
+      top: 185px
       content: ""
       cursor: pointer
       +s(prev)
     .next
       position: absolute
-      right: 35px
-      top: 200px
+      right: -48px
+      top: 185px
       content: ""
       cursor: pointer
       +s(next)
