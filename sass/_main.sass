@@ -180,25 +180,25 @@ header
   padding-bottom: 40px
   .photos_in
     @extend %in
-    width: 865px
+    width: 990px
     margin-top: 17px
+  h3
+    font-family: 'georgiaitalic'
+    font-size: 36px
+    font-weight: normal
+    color: #1e1e1e
+    margin-top: 50px
+    margin-bottom: 25px
   .photo__item
     position: relative
     display: inline-block
-    width: 200px
-    height: 120px
+    width: 300px
+    height: 180px
     vertical-align: top
-    margin-right: 15px
+    margin-right: 35px
     &:last-child
       margin-right: 0
-    &:after
-      position: absolute
-      content: ""
-      top: 0
-      left: 0
-      right: 0
-      bottom: 0
-      border: 4px solid rgba(#fff, .3)
+
     span
       position: absolute
       top: 0
@@ -216,8 +216,19 @@ header
         top: 50%
         left: 50%
         +transform(translate(-50%, -50%))
+      &:before
+        position: absolute
+        content: ""
+        width: 320px
+        height: 200px
+        top: -14px
+        left: -14px
+        border: 4px solid #e5e5e5
+
       &:hover
         +opacity(1)
+
+
 
     img
       display: block
@@ -230,9 +241,7 @@ header
   +box
   +clr
 
-  h3
-    color: #5a5a5a
-    font-size: 36px
+
   .history_in
     @extend %in
     width: 1000px
@@ -243,29 +252,59 @@ header
     +clr
     .history__block--right
       float: right
-      width: 550px
+      width: 600px
       +clr
       p
-        font-size: 16px
+        font-size: 18px
         margin-bottom: 28px
-        color: #1a1a1a
+        color: #1e1e1e
 
     .history__block--left
       float: left
-      width: 450px
+      width: 340px
       +clr
+      .history__link
+        position: relative
+        text-align: center
+        font-family: 'conv_segoeprintregular'
+        font-size: 14px
+        color: inherit
+        text-decoration: none
+        display: inline-block
+
+
+        &:hover
+          text-decoration: underline
+          .history__img
+            &:before
+              background: rgba(#fff, 0)
+
       .history__img
         position: relative
         display: block
-        width: 450px
-        height: 355px
-        margin-top: -30px
-        margin-left: -20px
-
+        width: 340px
+        height: 220px
+        margin-top: 5px
+        margin-bottom: 10px
         +clr
         img
           display: block
-
+        &:before
+          position: absolute
+          width: 320px
+          height: 200px
+          border: solid 2px white
+          top: 8px
+          left: 8px
+          content: ""
+          background: rgba(#fff,.2)
+        &:after
+          position: absolute
+          content: ""
+          +s(play)
+          top: 50%
+          left: 50%
+          +transform(translate(-50%, -50%))
 
 .specs
   background: #000
